@@ -1,0 +1,35 @@
+﻿<RunSettings>
+  <!-- MSTest adapter -->
+
+  <NUnit>
+    <NumberOfTestWorkers>24</NumberOfTestWorkers>
+    <!--<settings>
+		  <parallelize fixtures="all" assemblies="all" level="method" />
+	  </settings>-->
+  </NUnit>
+  <!-- General run configuration -->
+  <RunConfiguration>
+    <EnvironmentVariables>
+      <!-- For debugging selectors, it's recommend to set the following environment variable -->
+      <DEBUG>pw:api</DEBUG>
+    </EnvironmentVariables>
+  </RunConfiguration>
+  <Playwright>
+    <BrowserName>chromium</BrowserName>
+    <!--<ExpectTimeout>20000</ExpectTimeout>-->
+    <ExpectTimeout>200000</ExpectTimeout>
+    <LaunchOptions>
+      <Headless>false</Headless>
+      <Channel>msedge</Channel>
+    </LaunchOptions>
+  </Playwright>
+  <TestRunParameters>
+    <Parameter name="JsonDataPath" value="Assets/Json" />
+    <Parameter name="ApplicationUrl" value="https://adactinhotelapp.com/index.php" />
+    <Parameter name="IsMultipleUserEnabled" value="Y" />
+    <Parameter name="SingleUserKey" value="testUser1" />
+  </TestRunParameters>
+  <!--<assemblyResolution xmlns="urn:nunit">
+		<parallelizable enabled="true" />
+	</assemblyResolution>-->
+</RunSettings>
